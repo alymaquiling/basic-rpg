@@ -1,5 +1,7 @@
 import Phaser from "phaser";
 
+import newFont from "../../assets/fonts/upheavtt.ttf";
+
 import buttonImage from "../../assets/images/ui/play-button.png";
 import hoverButtonImage from "../../assets/images/ui/play-button-2.png";
 import chestImage from "../../assets/images/chest.png";
@@ -16,10 +18,18 @@ export default class BootScene extends Phaser.Scene {
   constructor() {
     super("Boot");
   }
+
   preload() {
     this.loadImages();
     this.loadSpriteSheets();
     this.loadAudio();
+  }
+
+  loadFont() {
+    this.load.script(
+      "webfont",
+      "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"
+    );
   }
 
   loadImages() {
